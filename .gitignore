@@ -3,3 +3,4 @@ build
 debian/control
 debian/files
 debian/tmp/
+debian/dtbocfg.debhelper.log

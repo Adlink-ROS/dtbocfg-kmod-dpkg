@@ -8,6 +8,7 @@ deb_arch       ?= $(shell dpkg --print-architecture)
 kernel_src_dir ?= /lib/modules/$(kernel_release)/build
 docdir          = debian/tmp/usr/share/doc/$(package)-$(kernel_release)
 
+
 clean:
 	rm -f build
 	-$(MAKE) clean
@@ -34,9 +35,9 @@ binary-arch: control build
 	cp -a debian/postinst       debian/tmp/DEBIAN
 	cp -a debian/prerm          debian/tmp/DEBIAN
 	cp -a debian/postrm         debian/tmp/DEBIAN
+	dh_install debian/etc ../tmp
 	chown -R root:root debian/tmp
 	chmod -$ u+w,go=rX debian/tmp
 	dpkg-deb --build debian/tmp ..
 
 binary: binary-indep binary-arch
-
