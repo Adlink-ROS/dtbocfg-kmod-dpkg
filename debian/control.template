@@ -6,10 +6,10 @@ Build-Depends: debhelper (>= 9), bzip2
 Standards-Version: 3.9.6
 Homepage: <https://github.com/ikwzm/dtbocfg>
 
-Package: dtbocfg-${KERNEL_RELEASE}
+Package: dtbocfg
 Architecture: any
 Provides: dtbocfg-kernel-module
-Depends: ${shlibs:Depends}, ${misc:Depends}, linux-image-${KERNEL_RELEASE}
+Depends: ${shlibs:Depends}, ${misc:Depends}, nvidia-l4t-core (>> 32.4-0), nvidia-l4t-core (<< 32.5-0)
 Description: Device Tree Blob Overlay Configuration File System.
 
 
